@@ -22,4 +22,8 @@ const userSchema = new mongoose.Schema({
   }
 })
 
+// userSchema.virtual('name').get(function () {
+//  return this.email.split('@')[0]
+// })
+
 module.exports = mongoose.model('User', userSchema)

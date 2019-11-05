@@ -32,6 +32,7 @@ const router = express.Router()
 router.get('/entrys', (req, res, next) => {
   // Entry.find({owner: req.user._id}) if you want privacy
   Entry.find()
+    .populate('owner')
     .then(entrys => {
       // `entrys` will be an array of Mongoose documents
       // we want to convert each one to a POJO, so we use `.map` to
