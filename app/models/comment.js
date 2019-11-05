@@ -1,10 +1,7 @@
+
 const mongoose = require('mongoose')
 
-const entrySchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true
-  },
+const commentSchema = new mongoose.Schema({
   text: {
     type: String,
     required: true
@@ -13,6 +10,10 @@ const entrySchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
+  },
+  entry: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Entry'
   }
 }, {
   timestamps: true,
@@ -21,4 +22,4 @@ const entrySchema = new mongoose.Schema({
   toJSON: { virtuals: true }
 })
 
-module.exports = mongoose.model('Entry', entrySchema)
+module.exports = mongoose.model('Comment', commentSchema)
