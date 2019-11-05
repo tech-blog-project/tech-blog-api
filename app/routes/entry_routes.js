@@ -29,7 +29,7 @@ const router = express.Router()
 
 // INDEX
 // GET /entrys
-router.get('/entrys', requireToken, (req, res, next) => {
+router.get('/entrys', (req, res, next) => {
   // Entry.find({owner: req.user._id}) if you want privacy
   Entry.find()
     .then(entrys => {
