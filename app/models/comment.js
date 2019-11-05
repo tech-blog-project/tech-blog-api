@@ -13,7 +13,8 @@ const commentSchema = new mongoose.Schema({
   },
   entry: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Entry'
+    ref: 'Entry',
+    required: true
   }
 }, {
   timestamps: true,
