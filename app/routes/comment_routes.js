@@ -5,6 +5,7 @@ const passport = require('passport')
 
 // pull in Mongoose model for comments
 const Comment = require('../models/comment')
+const Entry = require('../models/entry')
 
 // this is a collection of methods that help us detect situations when we need
 // to throw a custom error
@@ -61,7 +62,10 @@ router.get('/comments/:id', requireToken, (req, res, next) => {
 // POST /comments
 router.post('/comments', requireToken, (req, res, next) => {
   // set owner of new comment to be current user
+  console.log('this')
   req.body.comment.owner = req.user.id
+
+  req.body.comment.entry = req.entry.id
 
   Comment.create(req.body.comment)
     // respond to succesful `create` with status 201 and JSON of new "comment"
