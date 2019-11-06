@@ -31,6 +31,8 @@ const router = express.Router()
 // GET /comments
 router.get('/comments', requireToken, (req, res, next) => {
   Comment.find()
+    .populate('owner')
+    .populate('entry')
     .then(comments => {
       // `comments` will be an array of Mongoose documents
       // we want to convert each one to a POJO, so we use `.map` to
