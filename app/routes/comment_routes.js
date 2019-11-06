@@ -29,7 +29,7 @@ const router = express.Router()
 
 // INDEX
 // GET /comments
-router.get('/comments', requireToken, (req, res, next) => {
+router.get('/comments', (req, res, next) => {
   Comment.find()
     .populate('owner')
     .populate('entry')
