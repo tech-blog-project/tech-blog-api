@@ -62,7 +62,6 @@ router.get('/comments/:id', requireToken, (req, res, next) => {
 // POST /comments
 router.post('/comments', requireToken, (req, res, next) => {
   // set owner of new comment to be current user
-  console.log('entry id:?! ', req.body.comment.entry)
   req.body.comment.owner = req.user.id
 
   req.body.comment.entry = req.body.comment.entry
