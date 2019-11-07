@@ -23,7 +23,7 @@ The back end is built with Javascript, uitlizing Express and the Mongoose modeli
 - AJAX
 - Atom
 - Bootstrap
-- CSS
+- CSS/SASS
 - cURL
 - Express
 - Git/GitHub
