@@ -78,8 +78,9 @@ Working on this project gave us a much better understanding of our own strengths
 
 Additional features we would like to implement:
 
-- Dark mode. Dark mode is a great choice for users on mobile, or for use in specific lighting, and we would like to implement it
-- Collapsing entries and comments, and threading comments with comment replies
+- Mobile functionality. The app is usable on mobile, but things like comment forms
+don't work ideally.
+- Collapsing entries and comments; comment replies, and threading comments with comment replies
 - A toggle to let the user see only their own entries
 - Enable the user to set a userpic
 - Enable the user to "like" other entries or comments, or to follow other users
@@ -87,7 +88,9 @@ Additional features we would like to implement:
 Issues we were unable to solve in V.1, but would like to address:
 
 - On our comments, the comment ID currently displays so it can be prefilled into the edit and delete forms. Unfortunately, the ID is a large and unwieldy series of letters and numbers, and doesn't look good.
-- Fix the issues with handlebars templated elements being unable to be accessed directly
+- Fix the issues with handlebars templated elements being unable to be accessed directly.
+We solved the user-facing issue by creating a second handlebars template for logged out users, but this
+isn't DRY. 
 
 ## ERDs
 
